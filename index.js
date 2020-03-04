@@ -68,7 +68,8 @@ function typeOf(value){
 
 module.exports.typeOf = typeOf;
 /**
- * first: returns a new shallow copy of an array sliced from the beginning to a length provided with the input
+ * first: returns a new shallow copy of an array sliced from the beginning to a length provided with the input, if the number given is negative, an empty Array is returned
+ * if it is greater than the array length, the entire array is returned
  * 
  * @param {array} array: value that is an array
  * @param {number} number: value that is a number 
@@ -88,7 +89,8 @@ function first(array, number){
 module.exports.first = first;  
 
 /**
- * last: returns a new shallow copy of an array sliced from the number given to the end of the array
+ * last: returns a new shallow copy of an array sliced from the number given to the end of the array, if number given is negative, an empty Array is returned
+ * if it is greater than the array length, the entire array is returned 
  * 
  * @param {array} array: value that is an array
  * @param {number} number: value that is a number
@@ -264,7 +266,6 @@ function map(collection, func){
  * @param {Array or Object} collection: A collection that is an Array or Object
  * @param {Function} func: A call function that interacts with every element in the array or object
  * @return {boolean}true or false: Return true if element is collection
- * @return {boolean}true : Return true 
  */
   
   function every(collection, func){
@@ -328,8 +329,6 @@ module.exports.some = some;
 module.exports.reduce = reduce; 
 
 /** Extend: function that copies a second object and pastes it into the first object given. If the keys are the same in both objects, then only the value is updated.  
- * @param {Object} object: value that is an object
- * @param {Object} object: value that is an object
  * @return {Object} object: value that is an object
  */
  
